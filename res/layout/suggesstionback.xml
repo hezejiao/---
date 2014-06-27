@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+   <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/bg"
+        android:clickable="true"
+        android:orientation="vertical" >
+        
+   <RelativeLayout android:id="@+id/top_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/top_background">
+    
+   <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        >
+
+         <ImageButton
+             android:id="@+id/btn_back"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/btn_main_press1"
+             android:layout_gravity="center"
+             android:scaleType="centerInside"
+             android:src="@drawable/top_drawer" />
+ 
+    </LinearLayout>
+    
+    <TextView android:id="@+id/main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="意见反馈"
+        android:textSize="22sp"
+        android:textColor="#FCFEFF"/>
+    
+</RelativeLayout>
+
+   <LinearLayout android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="6dp"
+       android:layout_marginTop="12dp"
+       android:layout_marginRight="6dp"
+       android:background="@drawable/suggestion_back"
+       android:layout_below="@id/top_title">
+       
+   </LinearLayout>
+           
+ 
+  
+  <LinearLayout android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:background="@drawable/suggesstion_back_bg"
+      android:layout_alignParentBottom="true">
+    
+       <LinearLayout android:id="@+id/record_type1"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:orientation="horizontal"
+          >
+      
+         <Button android:id="@+id/start_record"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/btn_record_voice"/>
+          
+      </LinearLayout>
+      
+      
+      <RelativeLayout android:id="@+id/record_type2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" 
+          android:gravity="center"    
+          android:background="@drawable/suggesstion_back_bg"
+          android:visibility="gone"
+          android:orientation="horizontal"
+          >
+       <Button android:id="@+id/stop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_vertical"
+           android:layout_alignParentLeft="true"
+           android:layout_marginLeft="15dp"
+           android:background="@drawable/btn_record_voice_cancel"/>
+       
+       <Button android:id="@+id/play"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:layout_centerHorizontal="true"
+           android:background="@drawable/btn_record_voice_play"
+           />
+
+       <Button
+           android:id="@+id/send"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_vertical"
+           android:layout_alignParentRight="true"
+           android:layout_marginRight="2dp"
+           android:background="@drawable/btn_record_voice_send"
+          />
+         
+     </RelativeLayout>
+     
+  </LinearLayout>
+
+ 
+</RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+    
+    
+    <RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/top_background">
+    
+   <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        >
+
+         <ImageButton
+             android:id="@+id/btn_back"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/btn_main_press1"
+             android:layout_gravity="center"
+             android:scaleType="centerInside"
+             android:src="@drawable/backs" />
+ 
+    </LinearLayout>
+    
+    <TextView android:id="@+id/main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="声音设置"
+        android:textSize="22sp"
+        android:textColor="#FCFEFF"/>
+    
+</RelativeLayout>
+    
+
+  <RelativeLayout android:id="@+id/voice_set"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_margin="10dp"
+      >
+   <TextView android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="男声"
+       android:textSize="18sp"
+       android:textColor="#505050"
+       android:layout_centerVertical="true"
+       android:layout_alignParentLeft="true"/>
+   
+   <ImageButton android:id="@+id/boy_voice_select"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerVertical="true"
+       android:layout_alignParentRight="true"
+       android:layout_marginRight="14dp"
+       android:background="@drawable/navigation_overlay"
+       />
+      
+  </RelativeLayout>
+  
+  <ImageView android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:src="@drawable/line"
+      android:scaleType="fitXY"/>
+  
+  <RelativeLayout android:id="@+id/voice_set_girl"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_margin="10dp"
+      >
+   <TextView android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="女声"
+       android:textSize="18sp"
+       android:textColor="#505050"
+       android:layout_centerVertical="true"
+       android:layout_alignParentLeft="true"/>
+   
+   <ImageButton android:id="@+id/girls_voice_select"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerVertical="true"
+       android:layout_alignParentRight="true"
+       android:visibility="gone"
+       android:layout_marginRight="14dp"
+       android:background="@drawable/navigation_overlay"
+       />
+  </RelativeLayout>
+  
+  <ImageView android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:src="@drawable/line"
+      android:scaleType="fitXY"/>
+  
+</LinearLayout>

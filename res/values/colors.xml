@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text">#E7E9EB</color>
+    <color name="crop_background">#737373</color>
+    <color name="window_bg">#88838B8B</color>
+    <color name="main_text">#797979</color>
+    <color name="main_text_press">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+</resources>

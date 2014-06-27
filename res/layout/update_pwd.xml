@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+    
+  <RelativeLayout android:id="@+id/top_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/top_background">
+    
+   <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        >
+         <ImageButton
+             android:id="@+id/btn_back"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/btn_main_press1"
+             android:layout_gravity="center"
+             android:scaleType="centerInside"
+             android:src="@drawable/backs" />
+ 
+    </LinearLayout>
+    
+    <TextView android:id="@+id/main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="修改密码"
+        android:textSize="22sp"
+        android:textColor="#FCFEFF"/>
+    
+</RelativeLayout>
+    
+   <LinearLayout android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_margin="15dp"
+     android:background="@drawable/bellow_background"
+     android:orientation="vertical">
+    
+     <LinearLayout android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:layout_marginLeft="15dp"
+         android:layout_marginTop="8dp"
+         android:layout_marginBottom="8dp"
+         android:layout_gravity="center_vertical">
+       
+      <TextView android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="原始密码"
+          android:textColor="#505050"
+          android:textSize="18sp"/>
+      
+      <EditText android:id="@+id/old_pwd"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@null"
+          android:password="true"
+          android:hint="请输入原始密码"
+          android:layout_marginLeft="15dp"/>
+     </LinearLayout>
+     
+     <ImageView android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:src="@drawable/line"
+         android:scaleType="fitXY"
+         android:layout_marginLeft="8dp"
+         android:layout_marginRight="8dp"/>
+     
+     <LinearLayout android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:layout_marginLeft="15dp"
+         android:layout_marginTop="8dp"
+         android:layout_marginBottom="8dp"
+         android:layout_gravity="center_vertical">
+       
+      <TextView android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="新密码"
+          android:textColor="#505050"
+          android:textSize="18sp"/>
+      
+      <EditText android:id="@+id/new_pwd"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@null"
+          android:hint="请输入新密码"
+          android:password="true"
+          android:layout_marginLeft="15dp"/>
+         
+     </LinearLayout>
+     
+     <ImageView android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:src="@drawable/line"
+         android:scaleType="fitXY"
+         android:layout_marginLeft="8dp"
+         android:layout_marginRight="8dp"/>
+     
+     <LinearLayout android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:layout_marginLeft="15dp"
+         android:layout_marginTop="8dp"
+         android:layout_marginBottom="8dp"
+         android:layout_gravity="center_vertical">
+       
+      <TextView android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="重复"
+          android:textColor="#505050"
+          android:textSize="18sp"/>
+      
+      <EditText android:id="@+id/new_pwd_again"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@null"
+          android:hint="请再次输入新密码"
+          android:password="true"
+          android:layout_marginLeft="15dp"/>
+
+     </LinearLayout>
+    </LinearLayout>
+    
+   <Button android:id="@+id/to_save"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginLeft="20dp"
+     android:layout_marginTop="10dp"
+     android:layout_marginRight="20dp"
+     android:background="@drawable/btn_main_press2"
+     android:text="保存"
+     android:textSize="22sp"
+     android:textColor="#FFFFFFFF"
+     />
+</LinearLayout>

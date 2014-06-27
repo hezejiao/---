@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/top_background">
+    
+   <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        >
+
+         <ImageButton
+             android:id="@+id/btn_back"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/btn_main_press1"
+             android:layout_gravity="center"
+             android:scaleType="centerInside"
+             android:src="@drawable/backs" />
+ 
+    </LinearLayout>
+    
+    <TextView android:id="@+id/main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="导航软件"
+        android:textSize="22sp"
+        android:textColor="#FCFEFF"/>
+    
+</RelativeLayout>
+
+ <RelativeLayout android:id="@+id/empty"
+     android:layout_width="match_parent"
+     android:layout_height="50dp"
+     android:layout_marginLeft="10dp"
+     android:layout_marginTop="4dp"
+     android:layout_marginRight="8dp"
+     android:layout_marginBottom="4dp">
+     
+     <TextView android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="无"
+         android:textSize="20sp"
+         android:textColor="#505050"
+         android:layout_alignParentLeft="true"
+         android:layout_centerVertical="true"/>
+     
+     <ImageButton android:id="@+id/btn_empty"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="14dp"
+          android:background="@drawable/a_empty"
+          />
+ </RelativeLayout>
+ 
+ <ImageView android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:src="@drawable/line"
+     android:scaleType="fitXY"/>
+   
+ <RelativeLayout android:id="@+id/map_gaode"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="8dp"
+      android:layout_marginTop="4dp"
+      android:layout_marginBottom="4dp"
+      >
+      
+      <ImageView android:id="@+id/sys_map_icon"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/gaode"
+          android:scaleType="fitXY"
+          android:layout_alignParentLeft="true"
+          android:layout_centerVertical="true"
+          />
+      <TextView android:id="@+id/gaode"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@id/sys_map_icon"
+          android:layout_marginLeft="10dp"
+          android:layout_centerVertical="true"
+          android:text="高德地图"
+          android:textSize="20sp"
+          android:textColor="#505050"
+          />
+      <ImageView android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/introduce"
+          android:scaleType="fitXY"
+          android:layout_centerVertical="true"
+          android:layout_toRightOf="@id/gaode"
+          android:layout_marginLeft="8dp"/>
+      
+      <ImageButton android:id="@+id/btn_gaode_map"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="14dp"
+          android:background="@drawable/a_empty"
+          />
+  </RelativeLayout>
+  
+ <ImageView android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:src="@drawable/line"
+     android:scaleType="fitXY"/>
+
+  <RelativeLayout android:id="@+id/map_baidu"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="8dp"
+      android:layout_marginTop="4dp"
+      android:layout_marginBottom="4dp">
+      
+      <ImageView android:id="@+id/sys_map_iconbaidu"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/baidu"
+          android:scaleType="fitXY"
+          android:layout_alignParentLeft="true"
+          android:layout_centerVertical="true"
+          />
+      <TextView android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@id/sys_map_iconbaidu"
+          android:layout_marginLeft="10dp"
+          android:layout_centerVertical="true"
+          android:text="百度地图"
+          android:textSize="20sp"
+          android:textColor="#505050"
+          />
+      <ImageButton android:id="@+id/btn_baidu_map"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="14dp"
+          android:background="@drawable/a_empty"
+          
+          />
+  </RelativeLayout>
+  
+  <ImageView android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:src="@drawable/line"
+     android:scaleType="fitXY"/>
+  
+  <RelativeLayout android:id="@+id/map_google"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="8dp"
+      android:layout_marginTop="5dp"
+      android:layout_marginBottom="5dp">
+      
+      <ImageView android:id="@+id/sys_map_icon_google"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/google"
+          android:scaleType="fitXY"
+          android:layout_alignParentLeft="true"
+          android:layout_centerVertical="true"
+          />
+      <TextView android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@id/sys_map_icon_google"
+          android:layout_marginLeft="10dp"
+          android:layout_centerVertical="true"
+          android:text="谷歌地图"
+          android:textSize="20sp"
+          android:textColor="#505050"
+          />
+      <ImageButton android:id="@+id/btn_google_map"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="14dp"
+          android:background="@drawable/a_empty"
+          
+          />
+  </RelativeLayout>
+  
+  <ImageView android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:src="@drawable/line"
+     android:scaleType="fitXY"/>
+  
+</LinearLayout>

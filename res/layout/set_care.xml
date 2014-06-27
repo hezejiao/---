@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+    
+    
+    <LinearLayout android:id="@+id/my_relative"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+    
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+       
+     <ImageButton android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/login_cancel"
+        android:background="@drawable/btn_main_press1"
+        android:scaleType="centerInside"
+        />  
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="@drawable/top_background">
+     
+      <TextView android:id="@+id/current_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="设置关注"
+        android:textSize="22sp"
+        android:textColor="#FCFEFF"/>
+        
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+      
+       <ImageButton
+         android:id="@+id/btn_save"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:src="@drawable/btn_stores"
+         android:background="@drawable/btn_main_press1"
+         android:scaleType="centerInside"
+         />
+    </LinearLayout>
+    
+</LinearLayout>
+     
+    <LinearLayout android:id="@+id/my_time_tip"
+        android:layout_width="match_parent"
+        android:layout_below="@id/my_relative"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:orientation="vertical"
+        >
+    <TextView android:id="@+id/tip_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#505050"
+        android:text="你希望我们在几点钟提醒您关于港汇停车场的信息?"/>
+    
+    <ImageView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/line"
+        android:scaleType="fitXY"/>
+        
+    </LinearLayout>
+    
+    
+    <LinearLayout
+        android:id="@+id/mywheel"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/park_help_bg"
+        android:layout_below="@id/my_time_tip"
+        android:layout_centerVertical="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginLeft="20dp"
+		android:layout_marginRight="20dp"
+		android:layout_marginTop="30dp"
+        >
+        
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+		    android:layout_marginLeft="15dp"
+		    android:layout_marginRight="15dp">
+		    
+          <com.ab.view.wheel.AbWheelView
+            android:id="@+id/hour"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/time_set"/>
+
+        <com.ab.view.wheel.AbWheelView
+            android:id="@+id/mins"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/time_set"/>
+            
+        </LinearLayout>
+    </LinearLayout>
+    
+      
+    <RelativeLayout android:id="@+id/my_buttons"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignParentBottom="true">
+         
+         <TextView android:id="@+id/care"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerVertical="true"
+             android:layout_alignParentLeft="true"
+             android:layout_marginLeft="8dp"
+             android:textSize="20sp"
+             android:textColor="#505050"
+             android:text="重复"/>
+         
+         <LinearLayout android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentRight="true"
+             android:layout_marginLeft="6dp"
+             android:orientation="horizontal">
+             
+        <TextView android:id="@+id/date_set"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="无重复"
+             android:textSize="20sp"
+             android:textColor="#505050"
+             android:ems="9"
+             android:singleLine="true"
+             android:gravity="right"
+             android:layout_gravity="center_vertical"
+             />
+        
+        <ImageView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/right_row"
+            android:scaleType="fitXY"
+            android:layout_gravity="right"/>
+             
+         </LinearLayout>
+     </RelativeLayout>
+     
+    <ImageView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/line"
+        android:scaleType="fitXY"
+        android:layout_margin="6dp"
+        android:layout_above="@id/my_buttons"/>
+
+</RelativeLayout>

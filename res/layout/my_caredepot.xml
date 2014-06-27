@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg">
+    
+    
+  <LinearLayout android:id="@+id/top_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+    
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+       
+     <ImageButton android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_main_press1"
+        android:src="@drawable/backs"
+        android:scaleType="centerInside"
+        />  
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="@drawable/top_background">
+     
+      <TextView android:id="@+id/main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="我的关注"
+        android:textSize="22sp"
+        android:textColor="#FCFEFF"/>
+        
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/top_back">
+      
+       <Button
+         android:id="@+id/edit_caredepot"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:gravity="center"
+         android:layout_gravity="center"
+         android:background="@drawable/edit"
+         />
+    </LinearLayout>
+    
+</LinearLayout>
+    
+    <com.sary.arounddepot.view.XListView
+     android:id="@+id/my_list_caredepot"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:cacheColorHint="#000000"
+     android:listSelector="#FFFFFF" 
+     android:divider="#ffffff"
+     
+     >
+  </com.sary.arounddepot.view.XListView>
+  
+   
+    <!-- 
+    <com.ab.view.pullview.AbPullListView
+        android:id="@+id/my_list_caredepot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        android:divider="#ffffff"
+        android:layout_margin="9dp"
+        android:cacheColorHint="#000000"
+        android:listSelector="#FFFFFF"
+        >
+    </com.ab.view.pullview.AbPullListView>
+     -->
+  
+   <ImageView android:id="@+id/my_listview_null"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:src="@drawable/mycare_null"
+       android:visibility="gone"
+       android:scaleType="fitXY"/>
+    
+
+</LinearLayout>

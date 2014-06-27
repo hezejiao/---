@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainRLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+    
+  <RelativeLayout android:id="@+id/top_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/top_background">
+    
+   <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        >
+         <ImageButton
+             android:id="@+id/btn_back"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/btn_main_press1"
+             android:layout_gravity="center"
+             android:scaleType="centerInside"
+             android:src="@drawable/backs" />
+ 
+    </LinearLayout>
+    
+    <TextView android:id="@+id/main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="欢迎页"
+        android:textSize="22sp"
+        android:textColor="#FCFEFF"/>
+    
+</RelativeLayout>
+    
+  <com.sary.arounddepot.util.MyScrollLayout  
+	  android:id="@+id/ScrollLayout"
+	  android:layout_below="@id/top_title" 
+	  android:layout_width="fill_parent"    
+	  android:layout_height="fill_parent"
+	  android:visibility="visible"
+	  >
+      <RelativeLayout  android:background="@drawable/welcome1"    
+	  android:layout_width="fill_parent"    
+	  android:layout_height="fill_parent"
+	  >
+      </RelativeLayout>
+      <RelativeLayout  android:background="@drawable/welcome2"    
+	  	android:layout_width="fill_parent"    
+	  	android:layout_height="fill_parent"
+	  	>
+      </RelativeLayout>
+      
+    </com.sary.arounddepot.util.MyScrollLayout>
+    
+  <LinearLayout 
+    	android:orientation="horizontal" 
+    	android:id="@+id/lays" 
+    	android:layout_width="wrap_content" 
+    	android:layout_height="wrap_content" 
+    	android:layout_marginBottom="24.0dip" 
+    	android:layout_alignParentBottom="true" 
+    	android:layout_centerHorizontal="true"
+    	android:visibility="visible">
+    	
+        <ImageView android:clickable="true"  android:padding="5.0dip" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <ImageView android:clickable="true"  android:padding="5.0dip"  android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    
+</LinearLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainRLayout" >
+    
+   <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="用得好请告诉您的朋友"
+        android:textSize="16sp"
+        
+      
+        android:layout_centerHorizontal="true"
+        android:textColor="#919191"/>
+    
+    <com.sary.arounddepot.util.MyScrollLayout
+       xmlns:android="http://schemas.android.com/apk/res/android"    
+	  android:id="@+id/ScrollLayout"    
+	  android:layout_width="fill_parent"    
+	  android:layout_height="fill_parent"
+	  android:visibility="visible"
+	  > 
+	  
+     
+	   
+      <RelativeLayout  android:background="@drawable/guide1"    
+	  	android:layout_width="fill_parent"    
+	  	android:layout_height="fill_parent"
+	  	>
+      </RelativeLayout>
+      
+      <RelativeLayout  android:background="@drawable/guide2"    
+	  android:layout_width="fill_parent"    
+	  android:layout_height="fill_parent"
+	  />
+      <RelativeLayout  android:background="@drawable/guide3"    
+	  android:layout_width="fill_parent"    
+	  android:layout_height="fill_parent"
+	  />
+ 
+      <RelativeLayout  android:background="@drawable/guide4"    
+	  android:layout_width="fill_parent"    
+	  android:layout_height="fill_parent"
+	  >
+       <Button
+              android:id="@+id/startBtn"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentBottom="true"
+              android:layout_centerHorizontal="true"
+              android:layout_marginBottom="60dp"
+              android:background="@drawable/guide_btn"
+              />
+      
+      <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="用得好请告诉您的朋友，感觉不好请告诉我们"
+        android:textSize="16sp"
+        android:layout_above="@id/startBtn"
+        android:layout_marginBottom="18dp"
+        android:gravity="center_horizontal"
+        android:textColor="#919191"/>
+       
+      </RelativeLayout>
+    </com.sary.arounddepot.util.MyScrollLayout>
+    
+    <LinearLayout 
+    	android:orientation="horizontal" 
+    	android:id="@+id/lays" 
+    	android:layout_width="wrap_content" 
+    	android:layout_height="wrap_content" 
+    	android:layout_marginBottom="24.0dip" 
+    	android:layout_alignParentBottom="true" 
+    	android:layout_centerHorizontal="true"
+    	android:visibility="visible">
+    	
+        <ImageView android:clickable="true"  android:padding="5.0dip"  android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <ImageView android:clickable="true"  android:padding="5.0dip"  android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"  />
+        <ImageView android:clickable="true"  android:padding="5.0dip"  android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"  />
+        <ImageView android:clickable="true"  android:padding="5.0dip"  android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:id="@+id/mainviews"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/bg"
+        android:clickable="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/select_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/mydrawer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_main_press1"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/top_drawer" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/top_background"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/main_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="周边停车场"
+                    android:textColor="#FCFEFF"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/top_back"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/btn_tomaps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/top_map"
+                    android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/my_relative"
+            android:layout_below="@+id/select_item"
+            android:background="#FFFFFF" >
+
+            <LinearLayout
+                android:id="@+id/my_firstview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/my_relative"
+                android:layout_below="@+id/select_item"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/statbat"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:id="@+id/sort_power"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_down"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/power"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/sort_zhineng_press" />
+
+                        <TextView
+                            android:id="@+id/txt_power"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="智能排序"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/sort_state"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/state"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/sort_state" />
+
+                        <TextView
+                            android:id="@+id/txt_state"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="状态排序"
+                            android:textColor="#797979"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/sort_distance"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/distances"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/sort_distance" />
+
+                        <TextView
+                            android:id="@+id/txt_distances"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="距离排序"
+                            android:textColor="#797979"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/sort_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/prices"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/sort_price" />
+
+                        <TextView
+                            android:id="@+id/txt_prices"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="价格排序"
+                            android:textColor="#797979"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.sary.arounddepot.view.XListView
+                    android:id="@+id/list_park"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="6dp"
+                    android:cacheColorHint="#0000"
+                    android:divider="#ffffff"
+                    android:listSelector="#FFFFFF" >
+                </com.sary.arounddepot.view.XListView>
+
+                <ImageView
+                    android:id="@+id/my_listview_nulls"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/park_empty"
+                    android:visibility="gone" />
+                
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/my_map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                android:visibility="gone" >
+                
+                <com.amap.api.maps.MapView
+                    android:id="@+id/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFFFF" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/my_relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/location_again"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_main_press1"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/button_new" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/top_background"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/current_location"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text=""
+                    android:textColor="#FCFEFF"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/btn_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_main_press1"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/button_search" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    
+   
+    
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+      <ImageView android:id="@+id/my_first_in"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:src="@drawable/welcome2"
+          android:scaleType="fitXY"
+          android:visibility="gone"/>
+    </FrameLayout>
+    
+</RelativeLayout>

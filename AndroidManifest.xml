@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+    package="com.sary.arounddepot"
+
+    android:versionCode="102"        
+
+    android:versionName="1.0.2">
+    
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17"/>
+    
+    <!-- Required -->
+    <permission android:name="com.sary.arounddepot.permission.JPUSH_MESSAGE" android:protectionLevel="signature" />
+    <!-- Required -->
+    <uses-permission android:name="com.sary.arounddepot.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- Optional. Required for location feature -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 在SDCard中创建与删除文件权限 -->  
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <!-- 录音 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+	 <!-- 都写sd卡权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>  
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission> 
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <!-- 允许一个程序访问CellID或WiFi热点来获取粗略的位置  -->
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+	 <!-- 请求访问使用照相设备 -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+	<!-- 允许当前应用改变配置，如定位 -->
+	<uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+	<!-- 使用闪光灯 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <!-- 允许程序在手机屏幕关闭后后台进程仍然运行 -->
+    <user-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+   
+    <application
+        android:name="com.sary.arounddepot.MyApplication"
+
+        android:allowBackup="true"
+
+        android:icon="@drawable/icon1"
+
+        android:label="@string/app_name"
+
+        android:theme="@style/AppTheme" >
+         <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="6350ee21585fa9cc5ff4ba2feae61d87" />
+         
+         
+          <!-- Required -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+         
+        <!-- Required -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true" >
+          <intent-filter android:priority="1000"> <!--since 1.3.5 -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" /> <!--since 1.3.5 -->
+                <category android:name="com.sary.arounddepot" /> <!--since 1.3.5 -->
+            </intent-filter> <!--since 1.3.5 -->
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+     <!-- Required SDK核心功能-->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.sary.arounddepot" />
+            </intent-filter>
+        </activity>
+        <!-- Required SDK核心功能-->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
+        <!-- Required SDK核心功能-->
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
+      
+        <!-- Required. For publish channel feature -->
+        <!-- JPUSH_CHANNEL 是为了方便开发者统计APK分发渠道。-->
+        <!-- 例如: -->
+        <!-- 发到 Google Play 的APK可以设置为 google-play; -->
+        <!-- 发到其他市场的 APK 可以设置为 xxx-market。 -->
+        <!-- 目前这个渠道统计功能的报表还未开放。-->
+        <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
+        <!-- Required. AppKey copied from Portal -->
+        <meta-data android:name="JPUSH_APPKEY" android:value="7f7806394169ef7a5e5ff1a1"/> 
+         
+         
+         <!-- 注册闹钟 -->
+         <receiver android:name="com.sary.arounddepot.receiver.AlarmReceiver" android:process=":remote" />
+         <receiver android:name="com.sary.arounddepot.receiver.ParkAlarmReceiver" android:process=":remote" />
+         <!-- 下载新版本时启动服务 -->
+         <service android:name="com.sary.arounddepot.service.UpdateService"/>
+         
+         <!-- 闹铃 -->
+         <service android:name="com.sary.arounddepot.service.AlarmService"/>
+         
+         <!-- 闪屏页 -->
+         <activity android:name="com.sary.arounddepot.activity.SplashScreenActivity"
+             android:theme="@*android:style/Theme.NoTitleBar"
+             android:label="@string/app_name"
+             android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+         </activity>
+
+        <!-- 主页 -->
+        <activity
+            android:theme="@*android:style/Theme.NoTitleBar" 
+            android:name="com.sary.arounddepot.activity.MainActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <!-- 启动页-->
+        <activity android:name="com.sary.arounddepot.activity.GuideActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+        
+        <!-- 停车场详情 -->
+        <activity android:name="com.sary.arounddepot.activity.ParkDetailActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+          <!-- 目的地搜索 -->
+        <activity android:name="com.sary.arounddepot.activity.SearchParkActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+        
+         <!-- 登录 -->
+        <activity android:name="com.sary.arounddepot.activity.LoginActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+          <!-- 第三方登录 -->
+         <activity
+            android:name="cn.sharesdk.framework.ShareSDKUIShell"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="cn.sharesdk.example.oauth.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+         
+         <!-- 注册 -->
+        <activity android:name="com.sary.arounddepot.activity.RegistActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+        
+        <!-- 设置关注 -->
+        <activity android:name="com.sary.arounddepot.activity.SetCareActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+        
+        <!-- 我的消息，点击item有链接进去 -->
+         <activity android:name="com.sary.arounddepot.activity.MyNewsWebViewActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+         
+         <!-- 语音设置 -->
+          <activity android:name="com.sary.arounddepot.activity.AboutVoiceSetActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+          
+          <!-- 关于停哪儿 -->
+           <activity android:name="com.sary.arounddepot.activity.AboutDepotActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+           
+         <!-- 导航软件设置 -->
+          <activity android:name="com.sary.arounddepot.activity.AboutNavigationSetActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+          
+          <!-- 我关注的停车场 -->
+          <activity android:name="com.sary.arounddepot.activity.MyCareDepotActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+          
+          <!-- 修改密码 -->
+          <activity android:name="com.sary.arounddepot.activity.UpdatePasswordActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+          
+          <!-- 修改个人资料 -->
+          <activity android:name="com.sary.arounddepot.activity.UpdateUserInfoActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+          
+          <!-- 忘记密码 -->
+         <activity android:name="com.sary.arounddepot.activity.ForgetPwdActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+         
+         <!-- 图片剪切 -->
+         <activity android:name="com.sary.arounddepot.activity.CropImageActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+         
+         <!-- 声音类型选择 -->
+          <activity android:name="com.sary.arounddepot.activity.VoiceTypeSelectActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+          
+          <!-- 关于我们 -->
+          <activity android:name="com.sary.arounddepot.activity.AboutUsActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+          <!-- 欢迎页 -->
+          <activity android:name="com.sary.arounddepot.activity.WelcomeActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+          <!-- 使用条款 -->
+          <activity android:name="com.sary.arounddepot.activity.UserClauseActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+          <!-- 关于我们web页 -->
+          <activity android:name="com.sary.arounddepot.activity.About_us_WebviewActivity"
+            android:theme="@*android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+          
+           <!-- 放大图片-->
+           <activity android:name="com.sary.arounddepot.activity.LargePicActivity"
+            android:theme="@style/ImageScale"
+            android:screenOrientation="portrait"/>
+           
+           <activity android:name="com.sary.arounddepot.activity.LargePicForParkdetailActivity"
+            android:theme="@style/ImageScale"
+            android:screenOrientation="portrait"/>
+          
+    </application>
+</manifest>

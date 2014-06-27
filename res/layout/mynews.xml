@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/bg"
+        android:clickable="true"
+        android:orientation="vertical">
+        
+ <RelativeLayout android:id="@+id/top_titles"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/top_background">
+    
+   <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        >
+         <ImageButton
+             android:id="@+id/btn_back"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/btn_main_press1"
+             android:layout_gravity="center"
+             android:scaleType="centerInside"
+             android:src="@drawable/top_drawer" />
+ 
+    </LinearLayout>
+    
+    <TextView android:id="@+id/main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="我的消息"
+        android:textSize="22sp"
+        android:textColor="#FCFEFF"/>
+    
+</RelativeLayout>
+                 
+  <com.sary.arounddepot.view.XListView
+     android:id="@+id/list_news"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:background="@drawable/bg"
+     android:cacheColorHint="#000000"
+     android:listSelector="#FFFFFF"
+     android:layout_margin="9dp"
+     android:divider ="#ffffff"
+     >
+  </com.sary.arounddepot.view.XListView>
+        
+     
+</LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="horizontal"
+    >
+      
+   <LinearLayout android:id="@+id/record_type1"
+          android:layout_width="match_parent"
+          android:layout_height="80dp"
+          android:background="@drawable/slide_background"
+          android:gravity="center"
+          android:orientation="horizontal"
+          >
+          
+       <Button android:id="@+id/record_sounce"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_vertical"
+             android:background="@drawable/btn_record_voice"/>
+          
+      </LinearLayout>
+       
+      <LinearLayout android:id="@+id/record_type2"
+          android:layout_width="match_parent"
+          android:layout_height="80dp"
+          android:gravity="center"
+          android:background="@drawable/slide_background"    
+          android:visibility="gone"
+          android:orientation="horizontal"
+          >
+       <Button android:id="@+id/stop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_vertical"
+           android:gravity="center"
+           android:background="@drawable/btn_record_voice_cancel"/>
+       
+       <Button android:id="@+id/player"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_vertical"
+           android:background="@drawable/btn_record_voice_play"
+           />
+
+       <Button
+           android:id="@+id/send"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_vertical"
+           android:background="@drawable/btn_record_voice_send"
+           android:gravity="center" />
+     </LinearLayout> 
+</LinearLayout>

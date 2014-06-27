@@ -1,0 +1,118 @@
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+-optimizationpasses 5  ->设置混淆的压缩比率 0 ~ 7 
+
+-dontusemixedcaseclassnames -> Aa aA 
+
+-dontskipnonpubliclibraryclasses ->如果应用程序引入的有jar包,并且想混淆jar包里面的class 
+
+-dontpreverify 
+
+-verbose ->混淆后生产映射文件 map 类名->转化后类名的映射
+
+ -optimizations !code/simplification/arithmetic,!field/*,!class/merging/*  ->混淆采用的算法.
+
+ -keep public class * extends android.app.Activity   ->所有activity的子类不要去混淆 
+
+-keep public class * extends android.app.Application 
+
+-keep public class * extends android.app.Service
+
+-keep public class * extends android.content.BroadcastReceiver
+
+-keep public class * extends android.content.ContentProvider
+
+-keep public class * extends android.app.backup.BackupAgentHelper
+
+-keep public class * extends android.preference.Preference
+
+-keep public class com.android.vending.licensing.ILicensingService
+
+ -keepclasseswithmembernames class * {
+
+    native <methods>;   -> 所有native的方法不能去混淆. 
+
+}
+
+ -keepclasseswithmembers class * {
+
+    public <init>(android.content.Context, android.util.AttributeSet);
+
+    -->某些构造方法不能去混淆
+
+}
+
+ -keepclasseswithmembers class * {
+
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+
+}
+
+ -keepclassmembers class * extends android.app.Activity {
+
+   public void *(android.view.View);
+
+}
+
+ -keepclassmembers enum * {   -> 枚举类不能去混淆. 
+
+    public static **[] values();
+
+    public static ** valueOf(java.lang.String);
+
+}
+ -keep class * implements android.os.Parcelable {   -> aidl文件不能去混淆. 
+
+  public static final android.os.Parcelable$Creator *;
+}
+
+-dontwarn android.view.accessibility.**
+-keep class android.view.accessibility.** { *;}
+
+-libraryjars libs/android-async-http-1.4.3.jar
+-dontwarn com.loopj.android.http.**
+-keep class com.loopj.android.http.** { *;}
+
+
+#-----------gaode------------------
+ -libraryjars /libs/android-support-v4.jar  -dontwarn android.support.v4.**  
+-keep class android.support.v4.** {*;}  
+-keep public class * extends android.support.v4.**  
+-keep public class * extends android.app.Fragment
+-keep class com.amap.api.**  {*;}      
+-keep class com.autonavi.**  {*;}
+-keep class com.a.a.**  {*;}
+
+#----------jpush---------
+-dontwarn cn.jpush.**
+-keep class cn.jpush.** { *; }
+
+
+
+
+
+
+
+
+
+
+
